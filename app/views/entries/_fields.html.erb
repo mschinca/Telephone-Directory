@@ -1,0 +1,19 @@
+<% unless @entry.errors.empty? %>
+  <div class="validation-errors">
+    <%= @entry.errors.full_messages.join("<br />").html_safe %>
+  </div>
+<% end %>
+
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+<br />
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+<br />
+<%= f.label :phone_number %>
+<%= f.text_field :phone_number %>
+<br />
+<div class="field-tip">
+  E.g. +39 123 123456
+</div>
+<br />
