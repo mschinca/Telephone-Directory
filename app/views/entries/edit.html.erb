@@ -1,0 +1,5 @@
+<h2>Edit entry</h2>
+<%= form_for @entry do |f| %>
+  <%= render :partial => 'fields', :locals => {:f => f} %> 
+  <%= f.submit "Update"%> 
+<% end %>
