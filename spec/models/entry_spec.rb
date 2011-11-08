@@ -33,4 +33,27 @@ describe Entry do
       end
     end
   end
+  describe "search" do
+    before do
+      Entry.create!([
+        {:first_name => "Carlo", :last_name => "Rossi", :phone_number => "+34 123 123123"},
+        {:first_name => "Mario", :last_name => "Bianchi", :phone_number => "+34 321 321321"},
+      ])
+    end
+    it "should search amongst all attributes" do
+      @entries = Entry.search("rl")
+      @entries.length.should equal(1)
+      @entries.first.first_name.should == "Carlo"
+
+      @entries = Entry.search("123")
+      @entries.length.should equal(1)
+      @entries.first.first_name.should == "Carlo"
+
+      @entries = Entry.search("c")
+      @entries.length.should equal(2)
+
+      @entries = Entry.search("zz")
+      @entries.should be_empty
+    end
+  end
 end
