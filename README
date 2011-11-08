@@ -17,3 +17,28 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+HOW TO RUN
+
+This application was developed and tested using ruby 1.9.2 and rails 3.1.0
+on linux platform. It may or may not work with other systems.
+If you don't have already installed ruby and rails, the best way
+to go is RVM. See http://beginrescueend.com/ for details.
+This project also uses sqlite3, please refer to your linux distribution
+documentation to see how to install if you don't have it yet.
+You also will need git command to fetch the source code.
+Once you're ready, type the following commands:
+
+git clone git://github.com/mschinca/Telephone-Directory.git
+cd Telephone-Directory/ #you may get a .rvmrc warning, just answer yes
+bundle install
+rake db:migrate
+rake db:seed
+rails s
+
+Then open your favourite browser and point to:
+http://localhost:3000
+
+Enjoy!
+
+Marco Schincaglia
