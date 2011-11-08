@@ -1,0 +1,11 @@
+<h2>Welcome to Telephone Directory</h2>
+<p>
+  Use the search below to find existing entries, or <%= link_to "add a new entry", new_entry_path %>
+</p>
+<%= form_tag entries_path, :method => :get do %>
+  <%= text_field_tag 'q', params[:q] %>
+  <%= submit_tag 'search' %>
+<% end%>
+<% if params[:q].present? %>
+  <%= render "entries" %>
+<% end %>

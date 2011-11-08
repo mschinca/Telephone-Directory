@@ -1,0 +1,22 @@
+<% unless @entries.empty? %>
+  <hr />
+  <table>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Phone number</th>
+      <th></th>
+    </tr>
+    <% @entries.each do |e| %>
+    <tr class="entry_row">
+      <td><%= e.first_name %></td>
+      <td><%= e.last_name %> </td>
+      <td><%= e.phone_number %></td>
+      <td><%= link_to "Edit this entry", edit_entry_path(e) %></td>
+    </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>Sorry, no matches.
+  </p>
+<% end %>

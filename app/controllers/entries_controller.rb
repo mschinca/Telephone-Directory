@@ -1,4 +1,8 @@
 class EntriesController < ApplicationController
+  def index
+    @entries = search_entries
+  end
+
   def new
     @entry = Entry.new
   end
@@ -25,6 +29,16 @@ class EntriesController < ApplicationController
       redirect_to entries_path
     else
       render :edit
+    end
+  end
+
+  protected
+
+  def search_entries
+    unless params[:q].blank?
+      Entry.search(params[:q])
+    else
+      []
     end
   end
 end
