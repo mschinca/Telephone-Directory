@@ -10,6 +10,10 @@ describe Entry do
         :last_name =>"Schincaglia", :phone_number => "+3 1 1232341"})
       @entry.should be_valid
     end
+    it "should return a valid entry (Factory girl)" do
+      @entry = Factory.create(:entry)
+      @entry.should be_valid
+    end
     it "should have a first name" do
       @entry.should_not be_valid
       @entry.errors.full_messages.should include("First name can't be blank")
