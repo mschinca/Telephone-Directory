@@ -1,6 +1,6 @@
 <% unless @entry.errors.empty? %>
   <div class="validation-errors">
-    <%= @entry.errors.full_messages.join("<br />").html_safe %>
+    <%= format_errors(@entry.errors.full_messages) %>
   </div>
 <% end %>
 
