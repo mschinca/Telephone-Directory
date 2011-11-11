@@ -1,10 +1,12 @@
 <p>
   Use the search below to find existing entries, or <%= link_to "add a new entry", new_entry_path %>
 </p>
-<%= form_tag entries_path, :method => :get do %>
+<%= form_tag entries_path, :method => :get, :remote => true do %>
   <%= text_field_tag 'q', params[:q] %>
   <%= submit_tag 'search' %>
 <% end%>
+<div id="entries">
 <% if params[:q].present? %>
   <%= render "entries" %>
 <% end %>
+</div>

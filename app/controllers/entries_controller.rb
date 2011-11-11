@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+  respond_to :html, :js
+
   def index
     @entries = search_entries
   end

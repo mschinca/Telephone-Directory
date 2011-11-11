@@ -1,0 +1,5 @@
+<% if params[:q].present? %>
+  $("#entries").html("<%= escape_javascript(render("entries"))%>");
+<% else %>
+  $("#entries").html('');
+<% end %>
